@@ -1,0 +1,261 @@
+/* 1. RESET & GAYA DASAR Halaman */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* KONTENER UTAMA (Pembungkus Seluruh CV) */
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* 2. HEADER UTAMA (Kartu Profil Atas) */
+header {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+header img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+}
+
+.header-text h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.header-text p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.cta-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 1px solid #94a3b8;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 3. TATA LETAK 2 KOLOM (GRID) */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Kolom Kiri 2/3, Kolom Kanan 1/3 */
+  gap: 30px;
+  padding: 35px;
+}
+
+/* GAYA SEKSI & HEADING */
+section {
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+p,
+li {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* 4. TAMPILAN TIMELINE PENGALAMAN KERJA */
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #cbd5e1;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+}
+
+.timeline-item h3 {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.timeline-item .role {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* 5. BADGE / BADGE SKILLS (Keahlian) */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* LIST PENDIDIKAN & KONTAK */
+ul.simple-list {
+  list-style: none;
+}
+
+ul.simple-list li {
+  margin-bottom: 10px;
+}
+
+.contact-links a {
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN (Tampilan Mobile) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr; /* Jadi 1 kolom di layar HP */
+  }
+}
+
+/* Mengatur daftar titik hitam di dalam pengalaman kerja */
+.job-description {
+  margin-top: 8px;
+  padding-left: 20px; /* Memberi ruang untuk titik hitam */
+  list-style-type: disc; /* Memastikan bentuknya titik hitam bulat */
+}
+
+.job-description li {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 4px; /* Jarak antar titik */
+}
+
+/* GALERI PORTOFOLIO 3D */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.portfolio-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-info {
+  padding: 10px 12px;
+}
+
+.portfolio-info h3 {
+  font-size: 0.95rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.portfolio-info p {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
